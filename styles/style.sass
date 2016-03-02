@@ -73,16 +73,16 @@ body
 		width: 50%
 		background: none
 		padding: 1em
-		margin: 0.5em
-		border: 1px solid $red
-			radius: 0.3em
+		margin: 0.8em
+		border: none
+      bottom: 1px solid $red
 		color: $red
 		letter-spacing: 1px
 		transition: all 150ms ease-in-out
-  	font-smoothing: antialiased
+    font-smoothing: antialiased
 		&:focus, &:hover
 			outline: none
-			border: 1px solid lighten($red, 7%)
+			border-bottom: 1px solid lighten($red, 7%)
 	button[type='submit']
 		background: none
 		border: none
@@ -92,6 +92,7 @@ body
 		cursor: pointer
 		&:focus
 			outline: none
+
 .weath
   list-style: none
   color: $white
