@@ -1,41 +1,5 @@
 ($(function(){
-  // weather
-  $.simpleWeather({
-    location: 'Cleveland, OH',
-    woeid: '',
-    unit: 'f',
-    success: function(weather) {
-      // set the icon based on current conditions
-      var theIcon;
-      switch(weather.currently) {
-        case 'Cloudy/Windy':
-          theIcon = 'ion-ios-cloudy'
-          break;
-        case 'Cloudy':
-          theIcon = 'ion-ios-cloudy'
-          break;
-        case 'Sunny':
-          theIcon = 'ion-ios-sunny'
-          break;
-        case 'Partly Cloudy':
-          theIcon = 'ion-ios-partlysunny'
-          break;
-        default:
-          break;
-      }
-
-      icon = '<i class="'+theIcon+'"></i>';
-      html = '<p>'+weather.temp+'&deg;'+weather.units.temp+'</p>';
-
-      $('#weatherIcon').html(icon);
-      $('#weather').html(html);
-    },
-    error: function(error) {
-      $('#weather').html('<p>'+error+'</p>');
-    }
-  });
-
-  // top button clicks
+  // top button click events
 	$('.circleOne').click(function(){
 		$('.overlay').addClass('open');
 		$('.develop').addClass('open');
@@ -76,4 +40,47 @@
 			$('.finance').removeClass('open');
 		});
 	});
+
+  // weather
+  $.simpleWeather({
+    location: 'Cleveland, OH',
+    woeid: '',
+    unit: 'f',
+    success: function(weather) {
+      // set the icon based on current conditions
+      var theIcon;
+      switch(weather.currently) {
+        case 'Cloudy/Windy':
+        case 'Mostly Cloudy':
+        case 'Cloudy':
+          theIcon = 'ion-ios-cloudy'
+          break;
+        case 'Sunny':
+        case 'Fair':
+          theIcon = 'ion-ios-sunny'
+          break;
+        case 'Partly Cloudy':
+          theIcon = 'ion-ios-partlysunny'
+          break;
+        case 'Rainy':
+        case 'Light Rain':
+          theIcon = 'ion-ios-rainy'
+          break;
+        case 'Snowy':
+        case 'Light Snow':
+          theIcon = 'ion-ios-snowy'
+        default:
+          break;
+      }
+
+      icon = '<i class="'+theIcon+'"></i>';
+      html = '<p>'+weather.temp+'&deg;'+weather.units.temp+'</p>';
+
+      $('#weatherIcon').html(icon);
+      $('#weather').html(html);
+    },
+    error: function(error) {
+      $('#weather').html('<p>'+error+'</p>');
+    }
+  });
 }));

@@ -1,7 +1,7 @@
 doctype html
 html
 	head
-		title= startpage
+		title startpage
 		meta(name='viewport', content='width=device-width, initial-scale=1')
 		link(rel='stylesheet', type='text/css', href='styles/style.css')
 		script(type='text/javascript', src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js')
@@ -20,11 +20,11 @@ html
 			.circleFive(class='circle')
 				i(class='ion-cash')
 			.inputs
-				form(method='get' action='http://www.google.com/search', target='_blank')
+				form(method='get', action='http://www.google.com/search', target='_blank')
 					input(type='text' name='q' class='search' placeholder='google')
 					button(type='submit')
 						i(class='ion-search')
-				form(method='get' action='http://www.kickass.to/usearch/', target='_blank')
+				form(method='get', action='http://www.kickass.to/usearch/', target='_blank')
 					input(type='text' name='q' class='search' placeholder='kickass torrents')
 					button(type='submit')
 						i(class='ion-search')
