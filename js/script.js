@@ -1,45 +1,33 @@
 ($(function(){
   // top button click events
+  $('.circle').click(function(){
+    $('.overlay').addClass('open');
+  });
 	$('.circleOne').click(function(){
-		$('.overlay').addClass('open');
 		$('.develop').addClass('open');
-		$('.overlay').click(function(){
-			$(this).removeClass('open');
-			$('.develop').removeClass('open');
-		});
 	});
 	$('.circleTwo').click(function(){
-		$('.overlay').addClass('open');
 		$('.social').addClass('open');
-		$('.overlay').click(function(){
-			$(this).removeClass('open');
-			$('.social').removeClass('open');
-		});
 	});
 	$('.circleThree').click(function(){
-		$('.overlay').addClass('open');
 		$('.shop').addClass('open');
-		$('.overlay').click(function(){
-			$(this).removeClass('open');
-			$('.shop').removeClass('open');
-		});
 	});
 	$('.circleFour').click(function(){
-		$('.overlay').addClass('open');
 		$('.learn').addClass('open');
-		$('.overlay').click(function(){
-			$(this).removeClass('open');
-			$('.learn').removeClass('open');
-		});
 	});
 	$('.circleFive').click(function(){
-		$('.overlay').addClass('open');
 		$('.finance').addClass('open');
-		$('.overlay').click(function(){
-			$(this).removeClass('open');
-			$('.finance').removeClass('open');
-		});
 	});
+
+  // close modal after clicking a link or the background
+  $('a').click(function(){
+    $('.overlay').removeClass('open');
+    $('.modal').removeClass('open');
+  });
+  $('.overlay').click(function(){
+    $(this).removeClass('open');
+    $('.modal').removeClass('open');
+  });
 
   // weather
   $.simpleWeather({
